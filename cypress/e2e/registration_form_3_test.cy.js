@@ -15,7 +15,15 @@ Task list:
     * email format
  */
 
-
+describe('Visual tests for registration form 3', () => {
+    it.only('Verify visual parts of the page', ()=>{
+        cy.log('Will check Cerebrum Hub logo source and size')
+        cy.get('[data-testid="picture"]').should('have.attr', 'src').should('include', 'cerebrum_hub_logo')
+        cy.get('[data-testid="picture"]').invoke('width').should('be.greaterThan', 170).and('be.lessThan', 180)
+        cy.get('[data-testid="picture"]').invoke('height').should('be.greaterThan', 160).and('be.lessThan', 170)
+        
+    })
+})
 /*
 BONUS TASK: add functional tests for registration form 3
 Task list:
